@@ -14,6 +14,7 @@ target 'chuck-facts' do
   target 'chuck-factsTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'OHHTTPStubs/Swift'
   end
 
 end
