@@ -26,26 +26,29 @@ class CategoriesListViewController: UIViewController {
         super.viewDidLoad()
         
         // Setup UI
-        
         setupRefreshControl()
+        
+        // Bind UI
+        bindViewModel()
+        
+        // Fetch data
+        viewModel.fetchCategories()
     }
+
+    // MARK: - Private functions
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // ViewModel binding
-        
+    private func bindViewModel() {
         viewModel.isLoading
             .subscribe(onNext: { [weak self] isLoading in
                 isLoading ? self?.showLoading() : self?.hideLoading()
                 self?.changeRefreshControlState(isLoading: isLoading)
         }).disposed(by: bag)
         
-        viewModel.genres
+        viewModel.categories
             .bind(to: tableView.rx
                 .items(cellIdentifier: CategoryTableViewCell.identifier,
-                       cellType: CategoryTableViewCell.self)) { row, genre, cell in
-                        cell.setup(genre)
+                       cellType: CategoryTableViewCell.self)) { row, category, cell in
+                        cell.setup(category)
         }.disposed(by: bag)
         
         viewModel.fetchError
@@ -69,14 +72,6 @@ class CategoriesListViewController: UIViewController {
                                    sender: category)
         }.disposed(by: bag)
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        viewModel.fetchCategories()
-    }
-
-    // MARK: - Private functions
     
     private func showFetchDataError() {
         let message = "We had a problem fetching your data, please try again later."

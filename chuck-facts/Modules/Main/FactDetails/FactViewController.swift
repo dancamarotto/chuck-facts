@@ -17,6 +17,7 @@ class FactViewController: UIViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var factImageView: UIImageView!
     @IBOutlet weak var factLabel: UILabel!
+    @IBOutlet weak var nextFactButton: UIButton!
     @IBOutlet weak var openLinkButton: UIButton!
     
     var viewModel: FactViewModel!
@@ -35,6 +36,10 @@ class FactViewController: UIViewController {
     
     @IBAction func openLink(sender: Any) {
         viewModel.openLink()
+    }
+    
+    @IBAction func fetchNextFact(sender: Any) {
+        viewModel.fetchFact()
     }
     
     // MARK: - Private functions
@@ -60,6 +65,7 @@ class FactViewController: UIViewController {
     private func update(fact: ChuckFact) {
         DispatchQueue.main.async {
             self.factLabel.text = fact.value
+            self.nextFactButton.isHidden = false
             self.openLinkButton.isHidden = false
         }
         if let url = URL(string: fact.iconUrl) {

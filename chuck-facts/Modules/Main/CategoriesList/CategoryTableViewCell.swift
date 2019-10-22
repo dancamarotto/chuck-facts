@@ -10,11 +10,11 @@ import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var genreLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     static let identifier = "CategoryCell"
     
-    func setup(_ genre: Category) {
-        genreLabel.text = genre.name
+    func setup(_ category: Category) {
+        categoryLabel.text = category.name
     }
 }

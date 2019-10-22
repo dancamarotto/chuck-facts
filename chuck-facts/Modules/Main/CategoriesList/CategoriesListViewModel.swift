@@ -18,12 +18,12 @@ class CategoriesListViewModel {
     
     // MARK: - Bindable properties
     
-    private let genresSubject = PublishSubject<[Category]>()
+    private let categoriesSubject = PublishSubject<[Category]>()
     private let isLoadingSubject = PublishSubject<Bool>()
     private let fetchErrorSubject = PublishSubject<Error>()
     
-    var genres: Observable<[Category]> {
-        return genresSubject.asObservable()
+    var categories: Observable<[Category]> {
+        return categoriesSubject.asObservable()
     }
     var isLoading: Observable<Bool> {
         return isLoadingSubject.asObservable()
@@ -41,7 +41,7 @@ class CategoriesListViewModel {
         api.fetchCategories()
             .subscribe(onSuccess: { [weak self] categories in
                 self?.isLoadingSubject.onNext(false)
-                self?.genresSubject
+                self?.categoriesSubject
                     .onNext(categories.map { Category(name: $0) })
             }) { [weak self] error in
                 self?.isLoadingSubject.onNext(false)

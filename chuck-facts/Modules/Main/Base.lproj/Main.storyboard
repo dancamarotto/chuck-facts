@@ -41,7 +41,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="genreLabel" destination="toq-8m-sFs" id="I1x-Ul-Xtr"/>
+                                            <outlet property="categoryLabel" destination="toq-8m-sFs" id="B2a-Xq-ykR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -119,12 +119,26 @@
                                     <constraint firstAttribute="width" constant="50" id="hGL-RD-whb"/>
                                 </constraints>
                             </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6W0-kv-QJ0">
+                                <rect key="frame" x="110" y="412" width="100" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="9Tw-nH-1Ef"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Next fact">
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="fetchNextFactWithSender:" destination="wzr-CD-Pua" eventType="touchUpInside" id="oeU-8X-3aY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="5Sv-Rx-SqJ" firstAttribute="top" secondItem="j5b-bH-3Wg" secondAttribute="bottom" constant="30" id="0Re-d5-6WG"/>
                             <constraint firstItem="8HI-HM-Y5M" firstAttribute="trailing" secondItem="cDh-oU-KEV" secondAttribute="trailing" constant="20" id="AdL-F1-gKS"/>
                             <constraint firstItem="8HI-HM-Y5M" firstAttribute="bottom" secondItem="u89-Ds-6aM" secondAttribute="bottom" constant="20" id="EUO-mf-6vF"/>
+                            <constraint firstItem="u89-Ds-6aM" firstAttribute="top" secondItem="6W0-kv-QJ0" secondAttribute="bottom" constant="50" id="ZUP-go-I8g"/>
                             <constraint firstItem="8HI-HM-Y5M" firstAttribute="trailing" secondItem="5Sv-Rx-SqJ" secondAttribute="trailing" constant="30" id="dbD-RI-nQ9"/>
                             <constraint firstItem="u89-Ds-6aM" firstAttribute="centerX" secondItem="l6D-6L-DPa" secondAttribute="centerX" id="ekQ-jS-Iwy"/>
                             <constraint firstItem="dT2-nB-oM9" firstAttribute="top" secondItem="5Sv-Rx-SqJ" secondAttribute="bottom" constant="20" id="fFl-B0-P6C"/>
@@ -132,6 +146,7 @@
                             <constraint firstItem="cDh-oU-KEV" firstAttribute="leading" secondItem="8HI-HM-Y5M" secondAttribute="leading" constant="20" id="maK-Ta-Tzi"/>
                             <constraint firstItem="j5b-bH-3Wg" firstAttribute="centerX" secondItem="l6D-6L-DPa" secondAttribute="centerX" id="n2a-Q5-Tkg"/>
                             <constraint firstItem="dT2-nB-oM9" firstAttribute="centerX" secondItem="l6D-6L-DPa" secondAttribute="centerX" id="qeA-kK-jpq"/>
+                            <constraint firstItem="6W0-kv-QJ0" firstAttribute="centerX" secondItem="l6D-6L-DPa" secondAttribute="centerX" id="rhR-bi-YRb"/>
                             <constraint firstItem="cDh-oU-KEV" firstAttribute="top" secondItem="dT2-nB-oM9" secondAttribute="bottom" constant="25" id="sHX-kE-q2G"/>
                             <constraint firstItem="5Sv-Rx-SqJ" firstAttribute="leading" secondItem="8HI-HM-Y5M" secondAttribute="leading" constant="30" id="uLZ-Xa-y3a"/>
                         </constraints>
@@ -142,6 +157,7 @@
                         <outlet property="categoryLabel" destination="5Sv-Rx-SqJ" id="VyH-dN-Rwo"/>
                         <outlet property="factImageView" destination="dT2-nB-oM9" id="oEd-tT-X0W"/>
                         <outlet property="factLabel" destination="cDh-oU-KEV" id="DEB-jb-tWy"/>
+                        <outlet property="nextFactButton" destination="6W0-kv-QJ0" id="q43-XI-tTe"/>
                         <outlet property="openLinkButton" destination="u89-Ds-6aM" id="xux-Rh-BiZ"/>
                     </connections>
                 </viewController>
