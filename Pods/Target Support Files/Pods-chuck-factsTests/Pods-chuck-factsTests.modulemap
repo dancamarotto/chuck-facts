@@ -1,0 +1,6 @@
+framework module Pods_chuck_factsTests {
+  umbrella header "Pods-chuck-factsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

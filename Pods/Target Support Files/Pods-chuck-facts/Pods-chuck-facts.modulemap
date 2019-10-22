@@ -1,0 +1,6 @@
+framework module Pods_chuck_facts {
+  umbrella header "Pods-chuck-facts-umbrella.h"
+
+  export *
+  module * { export * }
+}
