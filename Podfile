@@ -8,7 +8,7 @@ target 'chuck-facts' do
   pod 'Alamofire'
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'Kingfisher'
+  pod 'Kingfisher', '~> 5.0'
   pod 'PKHUD'
 
   target 'chuck-factsTests' do

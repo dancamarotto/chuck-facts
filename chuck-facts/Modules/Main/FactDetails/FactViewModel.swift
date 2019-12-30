@@ -69,6 +69,6 @@ class FactViewModel {
                 fetchErrorSubject.onNext(error)
                 return
         }
-        UIApplication.shared.openURL(url)
+        UIApplication.shared.open(url)
     }
 }
