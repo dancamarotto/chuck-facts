@@ -26,6 +26,11 @@
 		AEA1869E235F251E006FED5D /* FactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA1869D235F251E006FED5D /* FactViewModel.swift */; };
 		AEA186A1235F29B2006FED5D /* ChuckFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA186A0235F29B2006FED5D /* ChuckFact.swift */; };
 		B01CA7899FF2A3CFB6E6112E /* Pods_chuck_factsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDDAB1AA12B2B9C7C130D05 /* Pods_chuck_factsTests.framework */; };
+		C456B05223BA3EB300C15F97 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C456B05123BA3EB300C15F97 /* Coordinator.swift */; };
+		C456B05423BA3EE100C15F97 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C456B05323BA3EE100C15F97 /* ApplicationCoordinator.swift */; };
+		C456B05623BA401500C15F97 /* CategoriesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C456B05523BA401500C15F97 /* CategoriesListCoordinator.swift */; };
+		C456B05923BA478900C15F97 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C456B05823BA478900C15F97 /* Utils.swift */; };
+		C456B05B23BA487A00C15F97 /* FactCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C456B05A23BA487A00C15F97 /* FactCoordinator.swift */; };
 		EEC3B173787DBAAA4AEFE625 /* Pods_chuck_facts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5370C5FAC392A8E496AB26C /* Pods_chuck_facts.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +75,11 @@
 		AEA1869B235F23C1006FED5D /* FactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewController.swift; sourceTree = "<group>"; };
 		AEA1869D235F251E006FED5D /* FactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewModel.swift; sourceTree = "<group>"; };
 		AEA186A0235F29B2006FED5D /* ChuckFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckFact.swift; sourceTree = "<group>"; };
+		C456B05123BA3EB300C15F97 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		C456B05323BA3EE100C15F97 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		C456B05523BA401500C15F97 /* CategoriesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListCoordinator.swift; sourceTree = "<group>"; };
+		C456B05823BA478900C15F97 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		C456B05A23BA487A00C15F97 /* FactCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +129,7 @@
 				AE6995D3235E22030016FB47 /* Modules */,
 				AE6995DC235E27190016FB47 /* Network */,
 				AE6995D0235E20AB0016FB47 /* Extensions */,
+				C456B05723BA477A00C15F97 /* Utils */,
 				AE5C6CBE235E15A2007D7F01 /* Assets.xcassets */,
 				AE5C6CC0235E15A2007D7F01 /* LaunchScreen.storyboard */,
 			);
@@ -147,6 +158,7 @@
 		AE6995D3235E22030016FB47 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C456B05023BA3EA500C15F97 /* Coordinator */,
 				AE6995D8235E229C0016FB47 /* Main */,
 			);
 			path = Modules;
@@ -155,6 +167,7 @@
 		AE6995D4235E22090016FB47 /* CategoriesList */ = {
 			isa = PBXGroup;
 			children = (
+				C456B05523BA401500C15F97 /* CategoriesListCoordinator.swift */,
 				AE5C6CB9235E159F007D7F01 /* CategoriesListViewController.swift */,
 				AE5C6CD7235E1BEC007D7F01 /* CategoryTableViewCell.swift */,
 				AE6995D6235E228C0016FB47 /* CategoriesListViewModel.swift */,
@@ -166,6 +179,7 @@
 		AE6995D5235E22110016FB47 /* FactDetails */ = {
 			isa = PBXGroup;
 			children = (
+				C456B05A23BA487A00C15F97 /* FactCoordinator.swift */,
 				AEA1869B235F23C1006FED5D /* FactViewController.swift */,
 				AEA1869D235F251E006FED5D /* FactViewModel.swift */,
 				AEA1869F235F29A3006FED5D /* Model */,
@@ -224,6 +238,23 @@
 				AEA186A0235F29B2006FED5D /* ChuckFact.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C456B05023BA3EA500C15F97 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C456B05123BA3EB300C15F97 /* Coordinator.swift */,
+				C456B05323BA3EE100C15F97 /* ApplicationCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		C456B05723BA477A00C15F97 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C456B05823BA478900C15F97 /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		D02AEE1A37523D474569A319 /* Frameworks */ = {
@@ -435,12 +466,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C456B05623BA401500C15F97 /* CategoriesListCoordinator.swift in Sources */,
 				81547B09238C6E9100BF5229 /* Network.swift in Sources */,
 				AE5C6CBA235E159F007D7F01 /* CategoriesListViewController.swift in Sources */,
 				AE5C6CB6235E159F007D7F01 /* AppDelegate.swift in Sources */,
 				AEA186A1235F29B2006FED5D /* ChuckFact.swift in Sources */,
 				AE5C6CB8235E159F007D7F01 /* SceneDelegate.swift in Sources */,
+				C456B05423BA3EE100C15F97 /* ApplicationCoordinator.swift in Sources */,
 				AE5C6CD8235E1BEC007D7F01 /* CategoryTableViewCell.swift in Sources */,
+				C456B05223BA3EB300C15F97 /* Coordinator.swift in Sources */,
+				C456B05923BA478900C15F97 /* Utils.swift in Sources */,
+				C456B05B23BA487A00C15F97 /* FactCoordinator.swift in Sources */,
 				AE6995D7235E228C0016FB47 /* CategoriesListViewModel.swift in Sources */,
 				AE6995D2235E20BC0016FB47 /* UIViewController+.swift in Sources */,
 				AEA1869C235F23C1006FED5D /* FactViewController.swift in Sources */,
@@ -615,6 +651,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dancamarotto.chuck-facts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -634,6 +671,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dancamarotto.chuck-facts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

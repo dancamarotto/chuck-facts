@@ -21,7 +21,9 @@ class FactViewController: UIViewController {
     @IBOutlet weak var openLinkButton: UIButton!
     
     var viewModel: FactViewModel!
-    let bag = DisposeBag()
+    private let bag = DisposeBag()
+    
+    static let viewIdentifier = "FactView"
     
     // MARK: - View lifecycle
     

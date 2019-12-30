@@ -10,6 +10,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol CategoriesListViewControllerDelegate: class {
+    func didSelectCategory(_ category: Category)
+}
+
 class CategoriesListViewController: UIViewController {
     
     // MARK: - Outlets and properties
@@ -19,6 +23,10 @@ class CategoriesListViewController: UIViewController {
     private let viewModel = CategoriesListViewModel()
     private let bag = DisposeBag()
     private let refreshControl = UIRefreshControl()
+    
+    weak var delegate: CategoriesListViewControllerDelegate?
+    
+    static let viewIdentifier = "CategoriesListView"
     
     // MARK: - View lifecycle
     
@@ -68,8 +76,9 @@ class CategoriesListViewController: UIViewController {
             .modelSelected(Category.self)
             .subscribe { [weak self] category in
                 guard let category = category.element else { return }
-                self?.performSegue(withIdentifier: "FactDetailView",
-                                   sender: category)
+                self?.delegate?.didSelectCategory(category)
+//                self?.performSegue(withIdentifier: "FactDetailView",
+//                                   sender: category)
         }.disposed(by: bag)
     }
     
@@ -102,15 +111,15 @@ class CategoriesListViewController: UIViewController {
     }
 }
 
-extension CategoriesListViewController {
-    
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? FactViewController,
-            let category = sender as? Category {
-            let viewModel = FactViewModel(category)
-            vc.viewModel = viewModel
-        }
-    }
-}
+//extension CategoriesListViewController {
+//
+//    // MARK: - Navigation
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let vc = segue.destination as? FactViewController,
+//            let category = sender as? Category {
+//            let viewModel = FactViewModel(category)
+//            vc.viewModel = viewModel
+//        }
+//    }
+//}
